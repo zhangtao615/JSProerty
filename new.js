@@ -10,11 +10,12 @@ Function.prototype.new = function () {
   let [constructor, ...args] = [...arguments]
   obj.__proto__ = constructor.prototype
   let res = constructor.apply(obj, args)
-  if (res && typeof res === 'function' || typeof res === 'object') {
+  if (res && typeof res === 'object' || typeof res === 'function') {
     return res
   }
   return obj
 }
+
 
 
 
